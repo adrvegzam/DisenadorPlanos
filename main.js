@@ -190,9 +190,10 @@ function Init(){
   }
 
   document.getElementById("save-blueprint").onclick = function(event){
-    event.preventDefault();
-    var image = canvasForeground.toDataURL("image/png").replace("image/png", "image/octet-stream");
-    window.location.href = image;
+    var link = document.createElement('a');
+    link.download = 'Plano.png';
+    link.href = canvasForeground.toDataURL()
+    link.click();
   }
 
   document.getElementById("move-tool").onclick = function(){
