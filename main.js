@@ -28,7 +28,7 @@ let moduleImages = [];
 let modulesLoaded = 0;
 let moduleSelected = 0;
 let moduleType = "home";
-let toolSelected = "add";
+let toolSelected = null;
 let actualRotation = 0;
 let moduleSize = [600,250];
 
@@ -51,20 +51,25 @@ canvasForeground.addEventListener("mousedown", function(event){
       }else{
         modulesInstantiated.push(new Module(gridedClickPos, moduleSelected, actualRotation, moduleSize, moduleType));
       }
+      toolSelected = null;
     }
   }else if(toolSelected == "move"){
 
   }else if(toolSelected == "remove"){
     let index = checkCollisionMouseToModule();
-    modulesInstantiated.splice(index, 1);
+    if(index != -1){
+      modulesInstantiated.splice(index, 1);
+    }
   }
   mousePressed = true;
 });
 
 canvasForeground.addEventListener("mouseup", function(event){
   mousePressed = false;
-  cameraPos[0] += (startClickPos[0] - endClickPos[0]);
-  cameraPos[1] += (startClickPos[1] - endClickPos[1]);
+  if(toolSelected == "move"){
+    cameraPos[0] += (startClickPos[0] - endClickPos[0]);
+    cameraPos[1] += (startClickPos[1] - endClickPos[1]);
+  }
 });
 
 canvasForeground.addEventListener("wheel", function(event){
@@ -74,9 +79,17 @@ canvasForeground.addEventListener("wheel", function(event){
     zoom += event.deltaY/2400;
 });
 
-canvasForeground.addEventListener("keydown", function(event){
-  console.log(event.key);
-})
+document.addEventListener("keydown", function(event){
+  if(event.key == "a" || event.key == "ArrowLeft"){
+    cameraPos[0] -= 50;
+  }else if(event.key == "d" || event.key == "ArrowRight"){
+    cameraPos[0] += 50;
+  }else if(event.key == "w" || event.key == "ArrowUp"){
+    cameraPos[1] -= 50;
+  }else if(event.key == "s" || event.key == "ArrowDown"){
+    cameraPos[1] += 50;
+  }
+});
 
 Init();
 function Init(){
@@ -88,7 +101,7 @@ function Init(){
   var modules = document.getElementsByClassName("type-home");
   for(let i = 0; i < modules.length; i++){
     let imageContainer = modules[i].querySelector(".module-model");
-    imageContainer.style = "background-image: url('modulo" + (i+1) + ".jpg');";
+    imageContainer.style = "background-image: url('./assets/modulo" + (i+1) + ".jpg');";
     modules[i].onclick = function(){
       const moduleNumber = i;
       moduleSelected = moduleNumber;
@@ -107,7 +120,7 @@ function Init(){
   var modules = document.getElementsByClassName("type-porch");
   for(let i = 0; i < modules.length; i++){
     let imageContainer = modules[i].querySelector(".module-model");
-    imageContainer.style = "background-image: url('porche" + (i+1) + ".png');";
+    imageContainer.style = "background-image: url('./assets/porche" + (i+1) + ".png');";
     modules[i].onclick = function(){
       const moduleNumber = i + 14;
       moduleSelected = moduleNumber;
@@ -127,7 +140,7 @@ function Init(){
   var modules = document.getElementsByClassName("type-pergola");
   for(let i = 0; i < modules.length; i++){
     let imageContainer = modules[i].querySelector(".module-model");
-    imageContainer.style = "background-image: url('pergola" + (i+1) + ".png');";
+    imageContainer.style = "background-image: url('./assets/pergola" + (i+1) + ".png');";
     modules[i].onclick = function(){
       const moduleNumber = i + 17;
       moduleSelected = moduleNumber;
@@ -147,7 +160,7 @@ function Init(){
   var modules = document.getElementsByClassName("type-patch");
   for(let i = 0; i < modules.length; i++){
     let imageContainer = modules[i].querySelector(".patch-model");
-    imageContainer.style = "background-image: url('parche" + (i+1) + ".jpg');";
+    imageContainer.style = "background-image: url('./assets/parche" + (i+1) + ".jpg');";
     modules[i].onclick = function(){
       const moduleNumber = i + 19;
       moduleSelected = moduleNumber;
@@ -187,6 +200,14 @@ function Init(){
   document.getElementById("zoomOut").onclick = function(){
     if(zoom >= 1 && zoom <= 2.75)
       zoom += 0.25;
+  }
+
+  document.getElementById("close-popup").onclick = function(){
+    document.getElementById("help-popup").style = "display: none;";
+  }
+
+  document.getElementById("open-popup").onclick = function(){
+    document.getElementById("help-popup").style = "";
   }
 
   document.getElementById("save-blueprint").onclick = function(event){
@@ -333,7 +354,7 @@ function loadModules(){
                         "parche6.jpg"];
   for(let i = 0; i < modulesToLoad.length; i++){
     let image = new Image();
-    image.src = modulesToLoad[i];
+    image.src = "./assets/" + modulesToLoad[i];
     image.onload = function(){
       modulesLoaded++;
       if(modulesLoaded == modulesToLoad.length){
@@ -435,6 +456,7 @@ function checkCollisionMouseToModule(){
         return i;
       }
   }
+  return -1;
 }
 
 function checkCollisionToModules(){

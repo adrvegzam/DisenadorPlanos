@@ -24,7 +24,7 @@
           <i class="fas fa-border-style"></i>
         </div> 
       </div>
-      <i class="help-icon far fa-question-circle"></i>
+      <i id="open-popup" class="help-icon far fa-question-circle"></i>
     </div>
     <div id="modules-menu" class="modules-div menu">
       <div class="modules-title-section">
@@ -304,6 +304,21 @@
       <i class="fas fa-trash-alt"></i>
     </div>
   </aside>
+  <div id="help-popup" class="help-popup">
+    <div class="popup-header">
+      <h2 class="popup-title">Ayuda sobre la aplicación</h2>
+      <i id="close-popup" class="fas fa-times popup-title"></i>
+    </div>
+    <div class="popup-body">
+      <p class="popup-message">
+        ¡Bienvenido al diseñador de planos! <br><br>
+        Para comenzar tan solo debe seleccionar algún <span class="modulo-span">módulo</span> de la seleccion de <span class="modulo-span"><i class="fas fa-cubes"></i> módulos</span> disponible a su izquierda. <br><br>
+        Una vez tenga el plano terminado y quiera unir <span class="modulo-span"><i class="fas fa-cubes"></i> módulos</span>, vaya a la sección de <span class="modulo-span"><i class="fas fa-border-style"></i> parches</span> y seleccione el que necesite. <br><br>
+        Puede desplazarse con el icono de mover, con las teclas <kbd>w</kbd>, <kbd>a</kbd>, <kbd>s</kbd>, <kbd>d</kbd> o con las flechas del teclado. <br><br>
+        Si lo desea, puede hacer zoom con los botones dispobles, eliminar cualquier <span class="modulo-span">módulo</span> o incluso rotarlos con los botones proporcionados.
+      </p>
+    </div>
+  </div>
   <div class="nav-container">
     <h1 class="main-title">Diseñador de Planos</h1>
     <a id="save-blueprint" class="save-button" href="#">Guardar plano</a>

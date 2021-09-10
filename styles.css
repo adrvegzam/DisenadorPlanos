@@ -163,7 +163,7 @@ canvas{
   justify-content: space-between;
   align-items: center;
   font-family: "Open Sans";
-  font-size: 10px;
+  font-size: 9px;
   color: #ffffff;
   padding: 5px 10px;
   box-sizing: border-box;
@@ -341,7 +341,7 @@ canvas{
   justify-content: space-between;
   align-items: center;
   font-family: "Open Sans";
-  font-size: 10px;
+  font-size: 9px;
   color: #ffffff;
   padding: 5px 10px;
   box-sizing: border-box;
@@ -416,4 +416,85 @@ canvas{
 
 .tool-selected{
   color: #FFAB5E;
+}
+
+.help-popup{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fafafa;
+  box-shadow: 0px 0px 5px -3px#181818;
+  border-radius: 5px;
+  width: 300px;
+  height: 400px;
+}
+
+.popup-header{
+  background-color: #FFAB5E;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; 
+  box-sizing: border-box;
+  padding: 0px 20px;
+}
+
+.popup-title{
+  font-family: "Open Sans";
+  font-size: 16px;
+  color: #fafafa;
+  font-weight: bold;
+}
+
+h2.popup-title{
+  flex-grow: 10;
+}
+
+i.popup-title{
+  cursor: pointer;
+}
+
+.popup-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.popup-message{
+  font-family: "Open Sans";
+  font-size: 12px;
+  color: #181818;
+  font-weight: 600;
+  text-align: center;
+}
+
+.modulo-span{
+  padding: 0px 4px;
+  color: #fafafa;
+  background-color: #FFAB5E;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+kbd {
+	margin: 0px 0.1em;
+	padding: 0.1em 0.6em;
+	border-radius: 3px;
+	border: 1px solid rgb(204, 204, 204);
+	color: rgb(51, 51, 51);
+	line-height: 1.4;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 10px;
+	display: inline-block;
+	box-shadow: 0px 1px 0px rgba(0,0,0,0.2), inset 0px 0px 0px 2px #ffffff;
+	background-color: rgb(247, 247, 247);
+	-moz-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+	-webkit-box-shadow: 0 1px 0px rgba(0, 0, 0, 0.2), 0 0 0 2px #ffffff inset;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	text-shadow: 0 1px 0 #fff;
 }
