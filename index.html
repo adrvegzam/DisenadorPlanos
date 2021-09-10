@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="canvasBackground"></canvas>
+  <canvas id="canvasForeground"></canvas>
+  <aside class="tools-aside">
+    <div class="tools-menu">
+      <div class="tools-div">
+        <div id="modules-menu-option" class="tool selected">
+          <i class="fas fa-cubes"></i>
+        </div> 
+        <div id="patches-menu-option" class="tool">
+          <i class="fas fa-border-style"></i>
+        </div> 
+      </div>
+      <i class="help-icon far fa-question-circle"></i>
+    </div>
+    <div id="modules-menu" class="modules-div menu">
+      <div class="modules-title-section">
+        <h2 class="module-title">Módulos</h2>
+      </div>
+      <div class="modules-list-section">
+        <ul class="modules-list">
+          <h3 class="module-category">Hogar</h3>
+          <li>
+            <div class="module-wrapper type-home">
+              <div class="module-info">
+                <h3 class="module-name">Módulo nº1</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="module-wrapper type-home">
+              <div class="module-info">
+                <h3 class="module-name">Módulo nº2</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="module-wrapper type-home">
+              <div class="module-info">
+                <h3 class="module-name">Módulo nº3</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="module-wrapper type-home">
+              <div class="module-info">
+                <h3 class="module-name">Módulo nº4</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="module-wrapper type-home">
+              <div class="module-info">
+                <h3 class="module-name">Módulo nº5</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="module-wrapper type-home">
+              <div class="module-info">
+                <h3 class="module-name">Módulo nº6</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="module-wrapper type-home">
+              <div class="module-info">
+                <h3 class="module-name">Módulo nº7</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="module-wrapper type-home">
+              <div class="module-info">
+                <h3 class="module-name">Módulo nº8</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="module-wrapper type-home">
+              <div class="module-info">
+                <h3 class="module-name">Módulo nº9</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="module-wrapper type-home">
+              <div class="module-info">
+                <h3 class="module-name">Módulo nº10</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="module-wrapper type-home">
+              <div class="module-info">
+                <h3 class="module-name">Módulo nº11</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="module-wrapper type-home">
+              <div class="module-info">
+                <h3 class="module-name">Módulo nº12</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="module-wrapper type-home">
+              <div class="module-info">
+                <h3 class="module-name">Módulo nº13</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="module-wrapper type-home">
+              <div class="module-info">
+                <h3 class="module-name">Módulo nº14</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <h3 class="module-category">Porches</h3>
+          <li>
+            <div class="module-wrapper type-porch">
+              <div class="module-info">
+                <h3 class="module-name">Porche nº1</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="module-wrapper type-porch">
+              <div class="module-info">
+                <h3 class="module-name">Porche nº2</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="module-wrapper type-porch">
+              <div class="module-info">
+                <h3 class="module-name">Porche nº3</h3>
+                <h3 class="module-size">3m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <h3 class="module-category">Pérgolas</h3>
+          <li>
+            <div class="module-wrapper type-pergola">
+              <div class="module-info">
+                <h3 class="module-name">Pérgola nº1</h3>
+                <h3 class="module-size">6m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="module-wrapper type-pergola">
+              <div class="module-info">
+                <h3 class="module-name">Pérgola nº2</h3>
+                <h3 class="module-size">3m x 2.5m</h3>
+              </div>
+              <div class="module-model"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="patches-menu" class="patches-div menu" style="display: none;">
+      <div class="patch-title-section">
+        <h2 class="patch-title">Parches</h2>
+      </div>
+      <div class="patches-list-section">
+        <ul class="patches-list">
+          <h3 class="patch-category">Salon</h3>
+          <li>
+            <div class="patch-wrapper type-patch">
+              <div class="patch-info">
+                <h3 class="patch-name">Horizontal nº1</h3>
+                <h3 class="patch-size">3m x 0.38m</h3>
+              </div>
+              <div class="patch-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="patch-wrapper type-patch">
+              <div class="patch-info">
+                <h3 class="patch-name">Horizontal nº2</h3>
+                <h3 class="patch-size">2m x 0.38m</h3>
+              </div>
+              <div class="patch-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="patch-wrapper type-patch">
+              <div class="patch-info">
+                <h3 class="patch-name">Horizontal nº3</h3>
+                <h3 class="patch-size">1m x 0.38m</h3>
+              </div>
+              <div class="patch-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="patch-wrapper type-patch">
+              <div class="patch-info">
+                <h3 class="patch-name">Vertical nº1</h3>
+                <h3 class="patch-size">3m x 0.38m</h3>
+              </div>
+              <div class="patch-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="patch-wrapper type-patch">
+              <div class="patch-info">
+                <h3 class="patch-name">Vertical nº2</h3>
+                <h3 class="patch-size">2m x 0.38m</h3>
+              </div>
+              <div class="patch-model"></div>
+            </div>
+          </li>
+          <li>
+            <div class="patch-wrapper type-patch">
+              <div class="patch-info">
+                <h3 class="patch-name">Vertical nº3</h3>
+                <h3 class="patch-size">1m x 0.38m</h3>
+              </div>
+              <div class="patch-model"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+  <aside class="zoom-options">
+    <div id="zoomIn" class="option-div">
+      <i class="fas fa-search-plus"></i>
+    </div>
+    <div id="zoomOut" class="option-div">
+      <i class="fas fa-search-minus"></i>
+    </div>
+  </aside>
+  <aside class="tool-options">
+    <div id="rotate90-clockwise" class="tool-option">
+      <i class="fas fa-undo"></i>
+      <p class="degree-text">90º</p>
+    </div>
+    <div id="rotate90-counterclockwise" class="tool-option">
+      <i class="fas fa-undo inverted"></i>
+      <p class="degree-text">90º</p>
+    </div>
+    <div id="rotate180" class="tool-option">
+      <i class="fas fa-sync"></i>
+      <p class="degree-text">180º</p>
+    </div>
+  </aside>
+  <aside class="tool-available">
+    <div id="move-tool" class="tool-selection">
+      <i class="fas fa-arrows-alt"></i>
+    </div>
+    <div id="remove-tool" class="tool-selection">
+      <i class="fas fa-trash-alt"></i>
+    </div>
+  </aside>
+  <div class="nav-container">
+    <h1 class="main-title">Diseñador de Planos</h1>
+    <a id="save-blueprint" class="save-button" href="#">Guardar plano</a>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
