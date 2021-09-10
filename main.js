@@ -191,18 +191,8 @@ function Init(){
 
   document.getElementById("save-blueprint").onclick = function(event){
     event.preventDefault();
-    canvasForeground.toBlob(function(blob) {
-      var newImg = document.createElement('img'),
-          url = URL.createObjectURL(blob);
-
-      newImg.onload = function() {
-        // no longer need to read the blob so it's revoked
-        URL.revokeObjectURL(url);
-      };
-
-      newImg.src = url;
-      document.body.appendChild(newImg);
-    });
+    var image = canvasForeground.toDataURL("image/png").replace("image/png", "image/octet-stream");
+    window.location.href = image;
   }
 
   document.getElementById("move-tool").onclick = function(){
